@@ -1,2 +1,2 @@
 # JavaCalculator
-> A Calculator applet written in Java.
+> A calculator application written in Java (JDK 18)
