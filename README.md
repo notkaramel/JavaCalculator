@@ -1,2 +1,2 @@
 # JavaCalculator
-> A calculator application written in Java (JDK 18)
+A calculator application written in Java (JDK 18)
