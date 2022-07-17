@@ -94,80 +94,22 @@ public class JavaCalGUI extends Frame implements ActionListener, KeyListener {
         NumberPanel.setLayout(new GridLayout(6, 4, 10, 10));
         NumberPanel.setBorder(BorderFactory.createEmptyBorder(10, 36, 20, 36));
 
-        // Create all 10 numerical buttons:
-        JButton button1 = new JButton("1");
-        JButton button2 = new JButton("2");
-        JButton button3 = new JButton("3");
-        JButton button4 = new JButton("4");
-        JButton button5 = new JButton("5");
-        JButton button6 = new JButton("6");
-        JButton button7 = new JButton("7");
-        JButton button8 = new JButton("8");
-        JButton button9 = new JButton("9");
-        JButton button0 = new JButton("0");
+        // Create all buttons and add them to the panel
+        String[] signs = {  "7", "8", "9",  "+",
+                            "4", "5", "6",  "-",
+                            "1", "2", "3",  "x", 
+                            "0", ".", "^",  "/", 
+                            "(", ")", "Ans", "="};
+        
+        Color button_Color = new Color(185, 185, 185); // set the color of the buttons
+        for(String sign : signs) {
+            JButton button = new JButton(sign);
+            button.setBorderPainted(false);
+            button.setBackground(button_Color);
+            button.addActionListener(this);
+            NumberPanel.add(button);
+        }
 
-        // Operand buttons
-        JButton plus = new JButton("+");
-        JButton minus = new JButton("-");
-        JButton multiply = new JButton("x");
-        JButton divide = new JButton("/");
-        JButton power = new JButton("^");
-        JButton dot = new JButton(".");
-        JButton openParenthesis = new JButton("(");
-        JButton closeParenthesis = new JButton(")");
-        JButton prevAns = new JButton("Ans"); // this was suppose to be +/- button, but I like this better
-        JButton equal = new JButton("=");
-
-        // addActionListener to all buttons
-        // (I had to do this manually because I couldn't find a more sufficient way)
-        button0.addActionListener(this);
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        button3.addActionListener(this);
-        button4.addActionListener(this);
-        button5.addActionListener(this);
-        button6.addActionListener(this);
-        button7.addActionListener(this);
-        button8.addActionListener(this);
-        button9.addActionListener(this);
-
-        openParenthesis.addActionListener(this);
-        closeParenthesis.addActionListener(this);
-
-        plus.addActionListener(this);
-        minus.addActionListener(this);
-        multiply.addActionListener(this);
-        divide.addActionListener(this);
-        power.addActionListener(this);
-        equal.addActionListener(this);
-        dot.addActionListener(this);
-        prevAns.addActionListener(this);
-
-        // Add all buttons (numerical + operands) to NumberPanel
-        NumberPanel.add(button7);
-        NumberPanel.add(button8);
-        NumberPanel.add(button9);
-        NumberPanel.add(plus);
-
-        NumberPanel.add(button4);
-        NumberPanel.add(button5);
-        NumberPanel.add(button6);
-        NumberPanel.add(minus);
-
-        NumberPanel.add(button1);
-        NumberPanel.add(button2);
-        NumberPanel.add(button3);
-        NumberPanel.add(multiply);
-
-        NumberPanel.add(button0);
-        NumberPanel.add(dot);
-        NumberPanel.add(power);
-        NumberPanel.add(divide);
-
-        NumberPanel.add(openParenthesis);
-        NumberPanel.add(closeParenthesis);
-        NumberPanel.add(prevAns);
-        NumberPanel.add(equal);
         return NumberPanel;
     }
 
@@ -177,26 +119,17 @@ public class JavaCalGUI extends Frame implements ActionListener, KeyListener {
         TrigPanel.setLayout(new GridLayout(2, 3, 10, 10));
         TrigPanel.setBorder(BorderFactory.createEmptyBorder(16, 36, 0, 36));
 
-        JButton sin = new JButton("sin");
-        JButton cos = new JButton("cos");
-        JButton tan = new JButton("tan");
-        JButton sec = new JButton("sec");
-        JButton csc = new JButton("csc");
-        JButton cot = new JButton("cot");
-
-        TrigPanel.add(sin);
-        TrigPanel.add(cos);
-        TrigPanel.add(tan);
-        TrigPanel.add(sec);
-        TrigPanel.add(csc);
-        TrigPanel.add(cot);
-
-        sin.addActionListener(this);
-        cos.addActionListener(this);
-        tan.addActionListener(this);
-        sec.addActionListener(this);
-        csc.addActionListener(this);
-        cot.addActionListener(this);
+        // Create trigonometry buttons and add them to the panel
+        String[] trigonometry = { "sin", "cos", "tan",
+                                "sec", "csc", "cot" };
+        Color button_Color = new Color(185, 185, 185); // set the color of the buttons
+        for(String sign : trigonometry) {
+            JButton button = new JButton(sign);
+            button.setBorderPainted(false);
+            button.setBackground(button_Color);
+            button.addActionListener(this);
+            TrigPanel.add(button);
+        }
         return TrigPanel;
     }
 
@@ -269,9 +202,13 @@ public class JavaCalGUI extends Frame implements ActionListener, KeyListener {
         JPanel UtilPanel = new JPanel(new GridLayout(2, 1, 0, 10));
 
         JButton C = new JButton("C"); // The C button
+        C.setBorderPainted(false);
+        C.setBackground(new Color(185, 185, 185));
         C.addActionListener(this);
 
         JToggleButton DecOrSigfig = new JToggleButton("Decimal Mode");
+        DecOrSigfig.setBorderPainted(false);
+        DecOrSigfig.setBackground(new Color(185, 185, 185));
         DecOrSigfig.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
