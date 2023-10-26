@@ -16,8 +16,8 @@ cd JavaCalculator
 
 
 ### Calculator in decimal mode: 
-![demo-deci-1](./demo/demo-deci-1.png)
-![demo-deci-2](./demo/demo-deci-2.png)
+![demo-deci-1](./demo_pictures/demo-deci-1.png)
+![demo-deci-2](./demo_pictures/demo-deci-2.png)
 
 ### Calculator in sigfig mode:
-![demo-sigfig-1](./demo/demo-sigfig-1.png)
+![demo-sigfig-1](./demo_pictures/demo-sigfig-1.png)
