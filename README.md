@@ -11,7 +11,9 @@ Then, run the following command:
 ```bash
 git clone https://github.com/notkaramel/JavaCalculator.git
 cd JavaCalculator
-./Compile.sh
+
+# Run the app:
+java -jar JavaCalculator.jar
 ```
 
 
