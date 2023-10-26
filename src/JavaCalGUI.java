@@ -34,7 +34,7 @@ public class JavaCalGUI extends Frame implements ActionListener, KeyListener {
     boolean inDecMode = true; // this will be used for a toggle button
 
     // Main method
-    public static void main(String[] arg) {
+    public static void main(String[] args) {
         new JavaCalGUI();
     }
 
